@@ -33,6 +33,7 @@ namespace SoulstoneCheats.Patches
             }
             var healthType = __instance._health.GameStatsHealthType;
             float multiplier = 1f;
+
             AIModification.RemoveEnemyAI(__instance);
 
             switch (healthType)

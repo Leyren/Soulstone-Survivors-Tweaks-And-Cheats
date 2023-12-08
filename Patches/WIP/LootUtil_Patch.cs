@@ -15,7 +15,7 @@ namespace SoulstoneCheats.Patches.WIP
     // DO NOT USE THIS TO MODIFY EXPERIENCE AND OTHER DROP AMOUNTS
     // BECAUSE IT WILL RESULT IN MORE INGAME ENTITIES
     // (e.g. x100 EXP means that an enemy that normally drops 1 EXP orb now drops 100, on bosses this lags, freezes or crashes the game)
-    [HarmonyPatch(typeof(LootUtil), nameof(LootUtil.CalculateLoot))]
+    //[HarmonyPatch(typeof(LootUtil), nameof(LootUtil.CalculateLoot))]
     internal class LootUtil_Patch
     {
 

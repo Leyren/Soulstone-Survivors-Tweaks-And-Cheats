@@ -37,7 +37,7 @@ namespace SoulstoneCheats.Unity
 
         public void Update()
         {
-
+            
         }
 
         /// <summary>

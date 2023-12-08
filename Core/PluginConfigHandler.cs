@@ -44,6 +44,7 @@ namespace SoulstoneCheats.Core.Config
         public static bool DisableEnemyAI { get; internal set; }
         public static bool RemoveMapObstacles { get; internal set; }
         public static bool UnlockZoom { get; internal set; }
+        public static float ExtraMineralsSpawnDelay { get; internal set; }
 
         public static class Player
         {
@@ -133,7 +134,8 @@ namespace SoulstoneCheats.Core.Config
             Entry(section, nameof(PluginConfig.EliteHealthMultiplier), 1.0f, v => PluginConfig.EliteHealthMultiplier = v);
             Entry(section, nameof(PluginConfig.SmallEnemyHealthMultiplier), 1.0f, v => PluginConfig.SmallEnemyHealthMultiplier = v);
             Entry(section, nameof(PluginConfig.EnemyObjectiveMultiplier), 1.0f, v => PluginConfig.EnemyObjectiveMultiplier = v);
-            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v);
+            Entry(section, nameof(PluginConfig.ExtraMineralsSpawnDelay), -1.0f, v => PluginConfig.ExtraMineralsSpawnDelay = v);
+            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v); 
 
             section = "Player";
             Entry(section, nameof(PluginConfig.Player.Invulnerable), false, v => PluginConfig.Player.Invulnerable = v);

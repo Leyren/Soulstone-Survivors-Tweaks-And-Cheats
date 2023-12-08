@@ -1,8 +1,11 @@
-﻿using ECM2.Characters;
+﻿using BepInEx.Unity.IL2CPP.Utils;
+using BepInEx.Unity.IL2CPP.Utils.Collections;
+using ECM2.Characters;
 using HarmonyLib;
 using SoulstoneCheats.Core.Config;
 using SoulstoneCheats.Modifications;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,24 +27,24 @@ namespace SoulstoneCheats.Patches
         [HarmonyPatch(nameof(SurvivorsGameManager.Awake))]
         static void Awake_Postfix(SurvivorsGameManager __instance)
         {
-           ObjectiveModification.ModifyEnemiesToEliminatePerBoss(__instance);
-           MapObstacleModification.RemoveMapObstacles();
+            ObjectiveModification.ModifyEnemiesToEliminatePerBoss(__instance);
+            MapObstacleModification.RemoveMapObstacles();
             ZoomModification.EnableZoom();
+            MineralModification.SpawnExtraMinerals(__instance);
         }
 
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         [HarmonyPatch(nameof(SurvivorsGameManager.OnDestroy))]
-        static void OnDestroy_Postfix(SurvivorsGameManager __instance)
+        static void OnDestroy_Prefix(SurvivorsGameManager __instance)
         {
             ZoomModification.DisableZoom();
+            MineralModification.StopSpawningExtraMinerals(__instance);
         }
 
         [HarmonyPrefix]
         [HarmonyPatch(nameof(SurvivorsGameManager.Update))]
         static void Update_Prefix(SurvivorsGameManager __instance)
         {
-            //__instance.SpawnMineral(false);
-            Plugin.Log.LogInfo("Invulnerable Time: " + __instance.PlayerEntity?._health?.InvulnerabilityTime);
             PlayerInventoryModification.HandleInventory(__instance.PlayerEntities);
         }
 
