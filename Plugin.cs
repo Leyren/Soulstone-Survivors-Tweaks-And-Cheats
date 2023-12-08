@@ -40,10 +40,5 @@ public class Plugin : BasePlugin
         harmony.PatchAll();
 
         Log.LogInfo($"Plugin Loading Completed");
-        // PlayerProfileCurrencies
-
-        // public Il2CppInterop.Runtime.InteropTypes.Arrays.Il2CppReferenceArray<PlayerProfileCurrencies> CostToUnlock { get; set; }
-        //Member of SkillTreeItemSO
-
     }
 }

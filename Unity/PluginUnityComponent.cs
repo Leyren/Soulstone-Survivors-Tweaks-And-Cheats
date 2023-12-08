@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 namespace SoulstoneCheats.Unity
@@ -30,12 +31,13 @@ namespace SoulstoneCheats.Unity
         public void Start()
         {
             ApplyGlobalPatches();
+
         }
 
 
         public void Update()
         {
-            
+
         }
 
         /// <summary>

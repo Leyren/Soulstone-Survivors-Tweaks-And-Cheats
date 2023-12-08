@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using ECM2.Characters;
+using HarmonyLib;
 using SoulstoneCheats.Core.Config;
 using SoulstoneCheats.Modifications;
 using System;
@@ -25,14 +26,21 @@ namespace SoulstoneCheats.Patches
         {
            ObjectiveModification.ModifyEnemiesToEliminatePerBoss(__instance);
            MapObstacleModification.RemoveMapObstacles();
+            ZoomModification.EnableZoom();
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(nameof(SurvivorsGameManager.OnDestroy))]
+        static void OnDestroy_Postfix(SurvivorsGameManager __instance)
+        {
+            ZoomModification.DisableZoom();
+        }
 
         [HarmonyPrefix]
         [HarmonyPatch(nameof(SurvivorsGameManager.Update))]
         static void Update_Prefix(SurvivorsGameManager __instance)
         {
-            //Plugin.Log.LogInfo("Alive Units: " + __instance._allEntities.Count);
+            //__instance.SpawnMineral(false);
             Plugin.Log.LogInfo("Invulnerable Time: " + __instance.PlayerEntity?._health?.InvulnerabilityTime);
             PlayerInventoryModification.HandleInventory(__instance.PlayerEntities);
         }
