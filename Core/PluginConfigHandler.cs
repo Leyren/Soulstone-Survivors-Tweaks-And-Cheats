@@ -45,6 +45,11 @@ namespace SoulstoneCheats.Core.Config
         public static bool RemoveMapObstacles { get; internal set; }
         public static bool UnlockZoom { get; internal set; }
         public static float ExtraMineralsSpawnDelay { get; internal set; }
+        public static float WeaponStrengthMultiplier { get; internal set; }
+        public static float WeaponUnlockCostMultiplier { get; internal set; }
+        public static float CharacterStatsMultiplier { get; internal set; }
+        public static float CharacterUnlockCostMultiplier { get; internal set; }
+        public static float RunicPowerMultiplier { get; internal set; }
 
         public static class Player
         {
@@ -125,7 +130,6 @@ namespace SoulstoneCheats.Core.Config
             Entry(section, nameof(PluginConfig.CurseBonusMultiplier), 1.0f, v => PluginConfig.CurseBonusMultiplier = v);
             Entry(section, nameof(PluginConfig.CurseLevelStrengthMultiplier), 1.0f, v => PluginConfig.CurseLevelStrengthMultiplier = v);
             Entry(section, nameof(PluginConfig.TimeModifier), 1.0f, v => PluginConfig.TimeModifier = v);
-            //Entry(section, nameof(PluginConfig.LootChanceMultiplier), 1.0f, v => PluginConfig.LootChanceMultiplier = v);
             Entry(section, nameof(PluginConfig.MinorSoulstoneMultiplier), 1.0f, v => PluginConfig.MinorSoulstoneMultiplier = v);
             Entry(section, nameof(PluginConfig.BossSoulstoneMultiplier), 1.0f, v => PluginConfig.BossSoulstoneMultiplier = v);
             Entry(section, nameof(PluginConfig.HealthPickupAmountMultiplier), 1.0f, v => PluginConfig.HealthPickupAmountMultiplier = v);
@@ -135,7 +139,12 @@ namespace SoulstoneCheats.Core.Config
             Entry(section, nameof(PluginConfig.SmallEnemyHealthMultiplier), 1.0f, v => PluginConfig.SmallEnemyHealthMultiplier = v);
             Entry(section, nameof(PluginConfig.EnemyObjectiveMultiplier), 1.0f, v => PluginConfig.EnemyObjectiveMultiplier = v);
             Entry(section, nameof(PluginConfig.ExtraMineralsSpawnDelay), -1.0f, v => PluginConfig.ExtraMineralsSpawnDelay = v);
-            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v); 
+            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v);
+            Entry(section, nameof(PluginConfig.WeaponStrengthMultiplier), 1.0f, v => PluginConfig.WeaponStrengthMultiplier = v);
+            Entry(section, nameof(PluginConfig.WeaponUnlockCostMultiplier), 1.0f, v => PluginConfig.WeaponUnlockCostMultiplier = v);
+            Entry(section, nameof(PluginConfig.CharacterStatsMultiplier), 1.0f, v => PluginConfig.CharacterStatsMultiplier = v);
+            Entry(section, nameof(PluginConfig.CharacterUnlockCostMultiplier), 1.0f, v => PluginConfig.CharacterUnlockCostMultiplier = v);
+            Entry(section, nameof(PluginConfig.RunicPowerMultiplier), 1.0f, v => PluginConfig.RunicPowerMultiplier = v);
 
             section = "Player";
             Entry(section, nameof(PluginConfig.Player.Invulnerable), false, v => PluginConfig.Player.Invulnerable = v);

@@ -48,6 +48,8 @@ namespace SoulstoneCheats.Unity
             CurseModification.ModifyCurseBonuses();
             CurseModification.ModifyCurseLevelStrength();
             SkillTreeCostModification.ModifySkillTreeCosts();
+            WeaponModification.ModifyWeaponStatsAndCosts();
+            CharacterModification.ModifyCharacterStatsAndCosts();
         }
     }
 }
