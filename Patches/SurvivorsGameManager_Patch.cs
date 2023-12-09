@@ -2,8 +2,8 @@
 using BepInEx.Unity.IL2CPP.Utils.Collections;
 using ECM2.Characters;
 using HarmonyLib;
-using SoulstoneCheats.Core.Config;
-using SoulstoneCheats.Modifications;
+using SoulstoneTweaks.Core.Config;
+using SoulstoneTweaks.Modifications;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace SoulstoneCheats.Patches
+namespace SoulstoneTweaks.Patches
 {
     /// <summary>
     /// SurvivorsGameManager is one of the main manager classes during a game - good to hook into for anything to apply during a match

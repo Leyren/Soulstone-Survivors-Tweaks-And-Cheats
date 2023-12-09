@@ -1,4 +1,4 @@
-﻿using SoulstoneCheats.Core.Config;
+﻿using SoulstoneTweaks.Core.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace SoulstoneCheats.Modifications
+namespace SoulstoneTweaks.Modifications
 {
     public static class TimeModification
     {

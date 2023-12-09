@@ -4,18 +4,26 @@ using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using HarmonyLib.Tools;
+using Il2CppSystem;
 using Il2CppSystem.Runtime.Remoting;
-using SoulstoneCheats.Core.Config;
-using SoulstoneCheats.Patches;
-using SoulstoneCheats.Unity;
+using SoulstoneTweaks.Core.Config;
+using SoulstoneTweaks.Patches;
+using SoulstoneTweaks.Unity;
 using System.Diagnostics.Metrics;
+using System.IO;
 using System.Reflection;
 
-namespace SoulstoneCheats;
+namespace SoulstoneTweaks;
 
-[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+[BepInPlugin(Info.GUID, Info.Name, Info.Version)]
 public class Plugin : BasePlugin
 {
+    public static class Info
+    {
+        public const string GUID = "SoulstoneTweaks";
+        public const string Name = "Soulstone Tweaks";
+        public const string Version = "1.0.0";
+    }
 
     internal static new ManualLogSource Log;
 
@@ -27,7 +35,8 @@ public class Plugin : BasePlugin
 
         CurrencyUtil.GetPriceValueByCurrencyPrice(new PlayerProfileCurrencies());
 
-        PluginConfigHandler configHandler = new PluginConfigHandler(Config);
+        var customFile = new ConfigFile(Path.Combine(Paths.ConfigPath, "custom_config.cfg"), true);
+        PluginConfigHandler configHandler = new(customFile);
 
         Log.LogInfo($"Injecting Unity component");
         AddComponent<PluginUnityComponent>();

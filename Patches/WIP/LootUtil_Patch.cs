@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using SoulstoneCheats.Core;
-using SoulstoneCheats.Core.Config;
-using SoulstoneCheats.Util;
+using SoulstoneTweaks.Core;
+using SoulstoneTweaks.Core.Config;
+using SoulstoneTweaks.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace SoulstoneCheats.Patches.WIP
+namespace SoulstoneTweaks.Patches.WIP
 {
     // This is called to determine what loot to drop
     // DO NOT USE THIS TO MODIFY EXPERIENCE AND OTHER DROP AMOUNTS

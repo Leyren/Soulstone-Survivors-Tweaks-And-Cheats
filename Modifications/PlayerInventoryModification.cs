@@ -1,13 +1,13 @@
 ﻿using Il2CppSystem.Collections.Generic;
-using SoulstoneCheats.Core.Config;
+using SoulstoneTweaks.Core.Config;
 using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SoulstoneCheats.Core.Config.PluginConfig;
-using static SoulstoneCheats.Core.Config.PluginConfig.Player;
+using static SoulstoneTweaks.Core.Config.PluginConfig;
+using static SoulstoneTweaks.Core.Config.PluginConfig.Player;
 
-namespace SoulstoneCheats.Modifications
+namespace SoulstoneTweaks.Modifications
 {
     public static class PlayerInventoryModification
     {

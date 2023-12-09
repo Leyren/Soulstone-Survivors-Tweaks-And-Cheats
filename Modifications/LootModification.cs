@@ -1,13 +1,13 @@
 ﻿using HarmonyLib;
-using SoulstoneCheats.Core.Config;
-using SoulstoneCheats.Util;
+using SoulstoneTweaks.Core.Config;
+using SoulstoneTweaks.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoulstoneCheats.Modifications
+namespace SoulstoneTweaks.Modifications
 {
     /// <summary>
     /// Modify gained soulstones, materials, gained exp, prestige, etc.

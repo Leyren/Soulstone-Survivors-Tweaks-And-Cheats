@@ -1,7 +1,7 @@
 ﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
 using ECM2.Common;
 using Il2CppSystem.Runtime.Remoting.Messaging;
-using SoulstoneCheats.Core.Config;
+using SoulstoneTweaks.Core.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Unity.AI.Navigation;
 using UnityEngine;
 
-namespace SoulstoneCheats.Modifications
+namespace SoulstoneTweaks.Modifications
 {
     /// <summary>
     /// Remove all obstacles from the map (except the outer boundaries)

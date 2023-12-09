@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace SoulstoneCheats.Core
+namespace SoulstoneTweaks.Core
 {
     // Uncomment this to get some patches useful for debugging, e.g. hooking into Prefab Instantiation
     //[HarmonyPatch]

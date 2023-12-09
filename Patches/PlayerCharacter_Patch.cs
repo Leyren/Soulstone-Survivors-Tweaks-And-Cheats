@@ -1,13 +1,13 @@
 ﻿using ECM2.Characters;
 using HarmonyLib;
-using SoulstoneCheats.Modifications;
+using SoulstoneTweaks.Modifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoulstoneCheats.Patches
+namespace SoulstoneTweaks.Patches
 {
     [HarmonyPatch(typeof(PlayerCharacter))]
     internal class PlayerCharacter_Patch

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoulstoneCheats", "SoulstoneCheats.csproj", "{DEA4CB8E-4FE8-468B-8941-42B93F236578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoulstoneTweaks", "SoulstoneTweaks.csproj", "{DEA4CB8E-4FE8-468B-8941-42B93F236578}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using SoulstoneCheats.Modifications;
+using SoulstoneTweaks.Modifications;
 
-namespace SoulstoneCheats.Patches
+namespace SoulstoneTweaks.Patches
 {
 
     [HarmonyPatch]
@@ -24,7 +24,7 @@ namespace SoulstoneCheats.Patches
             LootModification.ModifyHealthAmount(__instance);
         }
 
-        // Collectible Experience crystals// Collectible Experience crystals
+        // Collectible Experience crystals
         [HarmonyPrefix]
         [HarmonyPatch(typeof(CollectableExperience), nameof(CollectableExperience.DoOnReachedTarget))]
         static void CollectableExperience_Prefix(CollectableExperience __instance)

@@ -1,10 +1,10 @@
 ﻿using ECM2.Characters;
 using HarmonyLib;
 using Il2CppSystem.Collections.Generic;
-using SoulstoneCheats.Core.Config;
-using SoulstoneCheats.Modifications;
-using SoulstoneCheats.Patches;
-using SoulstoneCheats.Util;
+using SoulstoneTweaks.Core.Config;
+using SoulstoneTweaks.Modifications;
+using SoulstoneTweaks.Patches;
+using SoulstoneTweaks.Util;
 using System;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
-namespace SoulstoneCheats.Unity
+namespace SoulstoneTweaks.Unity
 {
     /// <summary>
     /// Unity Component to be injected. Follows a singleton pattern to ensure lifetime throughout the game.

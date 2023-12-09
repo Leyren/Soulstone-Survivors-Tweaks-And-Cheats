@@ -1,17 +1,17 @@
 ﻿using ECM2.Characters;
 using HarmonyLib;
 using Il2CppSystem.Reflection;
-using SoulstoneCheats.Core.Config;
-using SoulstoneCheats.Modifications;
+using SoulstoneTweaks.Core.Config;
+using SoulstoneTweaks.Modifications;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SoulstoneCheats.Core.Config.PluginConfig;
+using static SoulstoneTweaks.Core.Config.PluginConfig;
 
-namespace SoulstoneCheats.Patches
+namespace SoulstoneTweaks.Patches
 {
     [HarmonyPatch(typeof(Entity))]
     internal class Entity_Patch

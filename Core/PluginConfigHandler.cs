@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoulstoneCheats.Core.Config
+namespace SoulstoneTweaks.Core.Config
 {
     public static class PluginConfig
     {
