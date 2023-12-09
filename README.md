@@ -21,6 +21,8 @@ Unpack BepInEx into your game folder (usually something like `C:\Program Files (
 
 You should now have a `BepInEx/plugins` folder. Drop the `SoulstoneTweaks.dll` in there and you're good to go. After starting the game again, a config file will be created under `BepInex/configs/SoulstoneTweaks.cfg`.
 
+If you prefer building it yourself from the source code, just download the source, and run `dotnet build` (assuming you have .NET installed). The DLL should then be located in `bin/Debug/net6.0` (version number might differ).
+
 # Configuration & Features
 
 NOTE: Configs do not get applied while the game is running, changing the config requires a restart!
@@ -122,3 +124,6 @@ So make sure you edit the one that you want to change (check in which section it
 |`Base_Skill_Cooldowns`|`0`|Increases Player Skill Cooldown by the specified amount. E.g. `0.2` increases it by `20%`||
 |`Block_Chance`|`0`|Increases Player Block Chance by the specified amount. E.g. `0.2` increases it by `20%`||
 |`Extra_Cast_Modifier`|`0`|Increases Player Multicast by the specified amount. E.g. `0.2` increases it by `20%`||
+
+
+# Build
