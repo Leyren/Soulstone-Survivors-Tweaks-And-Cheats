@@ -126,11 +126,12 @@ namespace SoulstoneTweaks.Core.Config
             string section = "General";
 
             Entry(section, nameof(PluginConfig.DisableEnemyAI), false, v => PluginConfig.DisableEnemyAI = v);
+            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v);
+            Entry(section, nameof(PluginConfig.TimeModifier), 1.0f, v => PluginConfig.TimeModifier = v);
             Entry(section, nameof(PluginConfig.RemoveMapObstacles), false, v => PluginConfig.RemoveMapObstacles = v);
             Entry(section, nameof(PluginConfig.SkillTreeCostMultiplier), 1.0f, v => PluginConfig.SkillTreeCostMultiplier = v);
             Entry(section, nameof(PluginConfig.CurseBonusMultiplier), 1.0f, v => PluginConfig.CurseBonusMultiplier = v);
             Entry(section, nameof(PluginConfig.CurseLevelStrengthMultiplier), 1.0f, v => PluginConfig.CurseLevelStrengthMultiplier = v);
-            Entry(section, nameof(PluginConfig.TimeModifier), 1.0f, v => PluginConfig.TimeModifier = v);
             Entry(section, nameof(PluginConfig.MinorSoulstoneMultiplier), 1.0f, v => PluginConfig.MinorSoulstoneMultiplier = v);
             Entry(section, nameof(PluginConfig.BossSoulstoneMultiplier), 1.0f, v => PluginConfig.BossSoulstoneMultiplier = v);
             Entry(section, nameof(PluginConfig.HealthPickupAmountMultiplier), 1.0f, v => PluginConfig.HealthPickupAmountMultiplier = v);
@@ -140,7 +141,6 @@ namespace SoulstoneTweaks.Core.Config
             Entry(section, nameof(PluginConfig.SmallEnemyHealthMultiplier), 1.0f, v => PluginConfig.SmallEnemyHealthMultiplier = v);
             Entry(section, nameof(PluginConfig.EnemyObjectiveMultiplier), 1.0f, v => PluginConfig.EnemyObjectiveMultiplier = v);
             Entry(section, nameof(PluginConfig.ExtraMineralsSpawnDelay), -1.0f, v => PluginConfig.ExtraMineralsSpawnDelay = v);
-            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v); 
             Entry(section, nameof(PluginConfig.AutoUnlockSpecialPortals), false, v => PluginConfig.AutoUnlockSpecialPortals = v); 
             Entry(section, nameof(PluginConfig.WeaponStrengthMultiplier), 1.0f, v => PluginConfig.WeaponStrengthMultiplier = v);
             Entry(section, nameof(PluginConfig.WeaponUnlockCostMultiplier), 1.0f, v => PluginConfig.WeaponUnlockCostMultiplier = v);
