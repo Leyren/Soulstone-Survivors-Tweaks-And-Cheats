@@ -35,7 +35,7 @@ NOTE: Configs do not get applied while the game is running, changing the config 
 |`Unlock_Zoom`|`false`| Allows you to zoom in / out using your scroll wheel |<img src="Img/UnlockZoom.png" width="400">|
 |`Invulnerable`|`false`| Makes you completely invulnerable ||
 |`Time_Modifier`|`1.0`| Modifies game speed (affects **everything**). E.g. `2.0` doubles it.||
-|`Remove_Map_Obstacles`|`false`| Do you have trees? This option removes **ALL** obstacles from the map. Note: This may or may not work for future added maps.|<img src="Img/RemoveMapObstacles.png" width="400">|
+|`Remove_Map_Obstacles`|`false`| Do you hate trees? This option removes **ALL** obstacles from the map. Note: This may or may not work for future added maps.|<img src="Img/RemoveMapObstacles.png" width="400">|
 |`Extra_Minerals_Spawn_Delay`|`-1`| Spawns a new mineral every `n` seconds. E.g. when set to `0.1`, spawns 10 minerals per second. Disabled when negative.|<img src="Img/Extra_Minerals_Spawn_Delay.gif" width="250">|
 |`Auto_Unlock_Special_Portals`|`false`|Automatically opens special portals (e.g. to Secret Bosses) at the end of the round||
 
