@@ -125,5 +125,3 @@ So make sure you edit the one that you want to change (check in which section it
 |`Block_Chance`|`0`|Increases Player Block Chance by the specified amount. E.g. `0.2` increases it by `20%`||
 |`Extra_Cast_Modifier`|`0`|Increases Player Multicast by the specified amount. E.g. `0.2` increases it by `20%`||
 
-
-# Build
