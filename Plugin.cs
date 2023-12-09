@@ -33,16 +33,14 @@ public class Plugin : BasePlugin
         Plugin.Log = base.Log;
         Log.LogInfo($"Loading plugin...");
 
-        CurrencyUtil.GetPriceValueByCurrencyPrice(new PlayerProfileCurrencies());
-
-        var customFile = new ConfigFile(Path.Combine(Paths.ConfigPath, "custom_config.cfg"), true);
+        var customFile = new ConfigFile(Path.Combine(Paths.ConfigPath, "SoulstoneTweaks.cfg"), true);
         PluginConfigHandler configHandler = new(customFile);
 
         Log.LogInfo($"Injecting Unity component");
         AddComponent<PluginUnityComponent>();
 
         Log.LogInfo($"Initializing Harmony Patcher");
-        var harmony = new Harmony("leyren.soulstonecheats");
+        var harmony = new Harmony("leyren.soulstonetweaks");
         HarmonyFileLog.Enabled = true;
 
         Log.LogInfo($"Applying Patches");
