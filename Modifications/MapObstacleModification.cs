@@ -1,4 +1,7 @@
-﻿using SoulstoneCheats.Core.Config;
+﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
+using ECM2.Common;
+using Il2CppSystem.Runtime.Remoting.Messaging;
+using SoulstoneCheats.Core.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,29 +24,52 @@ namespace SoulstoneCheats.Modifications
         {
             if (!PluginConfig.RemoveMapObstacles) return;
 
+            // Find Scenario Root
+            // Every Map is structured by having an object like this, e.g. Scenario_Forest, Scenario_Cavern, etc.
+            // This contains the map, obstacles, lighting, etc.
             GameObject mapRoot = UnityEngine.GameObject.FindObjectsOfType<GameObject>().Where(go => go.name.StartsWith("Scenario_") && go.transform.parent == null).First();
+
             if (mapRoot != null)
             {
-                Plugin.Log.LogInfo("Found map root " + mapRoot.name);
-                HashSet<string> whitelist = new() {
-                    "Navegation_Colliders", "Desert_", // Desert map
-                    "Bones", "Dragon_Bones", "Rubbles", "Wall_Rocks", "Stalagmite", // Cavern map
-                    "New_Colliders_PolyShape"
-                };
-                HashSet<string> blacklist = new() {
-                    "Desert_Hills", // Desert map, outer border
-                    "Wall" // Cavern map outer wall
-                };
-                DeleteChildrenRecursively(mapRoot, whitelist, blacklist);
-                /*
-                var navmeshes = GameObject.FindObjectsOfType<NavMeshSurface>();
-                foreach (var navmesh in navmeshes)
-                {
-                    Plugin.Log.LogInfo($"{navmesh.name} update NavMesh");
-                    Action<AsyncOperation> value = a => Plugin.Log.LogInfo("Done " + a);
-                    navmesh.UpdateNavMesh(navmesh.m_NavMeshData).add_completed(value);
-                }*/
+                Plugin.Log.LogInfo("Found map hierarchy root object" + mapRoot.name);
 
+                // Step 1: Find the 'Ground' BoxCollider to determine the map size
+                var ground = FindChildByPredicate(mapRoot, node => node.layer == LayerMask.NameToLayer("Ground") && node.GetComponent<BoxCollider>());
+                if (ground == null)
+                {
+                    Plugin.Log.LogError("Could not find ground collider");
+                    return;
+                }
+                Plugin.Log.LogInfo("Found map ground object " + ground.name);
+
+                var width = 10f;
+                var innerBounds = ground.GetComponent<BoxCollider>().bounds;
+                innerBounds.extents = new Vector3(innerBounds.extents.x - width, 100, innerBounds.extents.z - width);
+
+                Plugin.Log.LogInfo("Inner Map Bounds: " + innerBounds.extents);
+
+                // Iterate all child nodes, and delete all objects that contain a meshrenderer or collider, and is within the inner bounds
+                // inner bounds is the mapsize reduced by some size to ensure the border of the map is not removed
+                ProcessNodeHierarchy(mapRoot, node =>
+                {
+                    if (node.layer == LayerMask.NameToLayer("Ground") || node.name.Contains("Ground"))
+                    {
+                        return false;
+                    } else
+                    {
+                        var renderer = node.GetComponent<MeshRenderer>();
+                        var collider = node.GetComponent<Collider>();
+                        var pos = node.transform.position;
+                        pos.y = 0;
+                        if ((renderer || collider) && innerBounds.Contains(pos))
+                        {
+                            Plugin.Log.LogInfo($"Delete Map Object {node.name} at {node.transform.position}");
+                            GameObject.Destroy(node);
+                            return false;
+                        }
+                    }
+                    return true;
+                });
             }
             else
             {
@@ -51,26 +77,37 @@ namespace SoulstoneCheats.Modifications
             }
         }
 
-        private static void DeleteChildrenRecursively(GameObject root, HashSet<string> whitelistPrefixes, HashSet<string> blacklistPrefixes)
+
+        private static void ProcessNodeHierarchy(GameObject root, Func<GameObject, bool> nodeConsumer)
         {
             for (var i = 0; i < root.transform.childCount; i++)
             {
-                Transform child = root.transform.GetChild(i);
-                if (MatchesPrefix(child.name, whitelistPrefixes) && !blacklistPrefixes.Contains(child.name))
+                GameObject child = root.transform.GetChild(i).gameObject;
+                if (nodeConsumer.Invoke(child))
                 {
-                    Plugin.Log.LogInfo("Deleting Object " + child.name);
-                    UnityEngine.GameObject.Destroy(child.gameObject);
-                }
-                else
-                {
-                    DeleteChildrenRecursively(child.gameObject, whitelistPrefixes, blacklistPrefixes);
+                    ProcessNodeHierarchy(child, nodeConsumer);
                 }
             }
         }
 
-        private static bool MatchesPrefix(string name, HashSet<string> prefixes)
+        private static GameObject FindChildByPredicate(GameObject root, Func<GameObject, bool> predicate)
         {
-            return prefixes.Any(p => name.StartsWith(p, true, null));
+            for (var i = 0; i < root.transform.childCount; i++)
+            {
+                GameObject child = root.transform.GetChild(i).gameObject;
+                if (predicate.Invoke(child))
+                {
+                    return child;
+                } else
+                {
+                    GameObject result = FindChildByPredicate(child, predicate);
+                    if (result != null)
+                    {
+                        return result;
+                    }
+                }
+            }
+            return null;
         }
 
     }

@@ -51,5 +51,8 @@
     <Reference Include="UnityEngine.InputModule">
       <HintPath>..\BepInEx\interop\UnityEngine.InputModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\BepInEx\interop\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
