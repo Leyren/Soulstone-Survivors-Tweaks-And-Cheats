@@ -50,15 +50,15 @@ namespace SoulstoneTweaks.Modifications
                 // Alternative: Set this while hooking into LevelUpPanelManager, since that is the only place where they are being used, but 
                 if (PluginConfig.Player.Inventory.InfiniteRerolls)
                 {
-                    player._inventory.InventoryData.Rerolls = PluginConfig.Player.Inventory.AdditionalRerolls;
+                    player._inventory.InventoryData.Rerolls = 1000;
                 }
                 if (PluginConfig.Player.Inventory.InfiniteBanishes)
                 {
-                    player._inventory.InventoryData.Banishes = PluginConfig.Player.Inventory.AdditionalBanishes;
+                    player._inventory.InventoryData.Banishes = 1000;
                 }
                 if (PluginConfig.Player.Inventory.InfiniteLocks)
                 {
-                    player._inventory.InventoryData.Locks = PluginConfig.Player.Inventory.AdditionalLocks;
+                    player._inventory.InventoryData.Locks = 1000;
                 }
             }
         }
