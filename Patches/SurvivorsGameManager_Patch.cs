@@ -31,6 +31,7 @@ namespace SoulstoneCheats.Patches
             MapObstacleModification.RemoveMapObstacles();
             ZoomModification.EnableZoom();
             MineralModification.SpawnExtraMinerals(__instance);
+
         }
 
         [HarmonyPrefix]
@@ -46,8 +47,7 @@ namespace SoulstoneCheats.Patches
         static void Update_Prefix(SurvivorsGameManager __instance)
         {
             PlayerInventoryModification.HandleInventory(__instance.PlayerEntities);
+            SpecialTaskModification.ModifySpecialPortal(__instance);
         }
-
     }
-
 }

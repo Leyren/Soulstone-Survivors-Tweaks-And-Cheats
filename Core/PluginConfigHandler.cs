@@ -44,6 +44,7 @@ namespace SoulstoneCheats.Core.Config
         public static bool DisableEnemyAI { get; internal set; }
         public static bool RemoveMapObstacles { get; internal set; }
         public static bool UnlockZoom { get; internal set; }
+        public static bool AutoUnlockSpecialPortals { get; internal set; }
         public static float ExtraMineralsSpawnDelay { get; internal set; }
         public static float WeaponStrengthMultiplier { get; internal set; }
         public static float WeaponUnlockCostMultiplier { get; internal set; }
@@ -139,7 +140,8 @@ namespace SoulstoneCheats.Core.Config
             Entry(section, nameof(PluginConfig.SmallEnemyHealthMultiplier), 1.0f, v => PluginConfig.SmallEnemyHealthMultiplier = v);
             Entry(section, nameof(PluginConfig.EnemyObjectiveMultiplier), 1.0f, v => PluginConfig.EnemyObjectiveMultiplier = v);
             Entry(section, nameof(PluginConfig.ExtraMineralsSpawnDelay), -1.0f, v => PluginConfig.ExtraMineralsSpawnDelay = v);
-            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v);
+            Entry(section, nameof(PluginConfig.UnlockZoom), false, v => PluginConfig.UnlockZoom = v); 
+            Entry(section, nameof(PluginConfig.AutoUnlockSpecialPortals), false, v => PluginConfig.AutoUnlockSpecialPortals = v); 
             Entry(section, nameof(PluginConfig.WeaponStrengthMultiplier), 1.0f, v => PluginConfig.WeaponStrengthMultiplier = v);
             Entry(section, nameof(PluginConfig.WeaponUnlockCostMultiplier), 1.0f, v => PluginConfig.WeaponUnlockCostMultiplier = v);
             Entry(section, nameof(PluginConfig.CharacterStatsMultiplier), 1.0f, v => PluginConfig.CharacterStatsMultiplier = v);

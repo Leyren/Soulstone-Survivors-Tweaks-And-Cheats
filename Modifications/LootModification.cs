@@ -20,7 +20,7 @@ namespace SoulstoneCheats.Modifications
             item.Amount = (int)(item.Amount * PluginConfig.ItemDropAmountMultiplier);
         }
 
-        public static void ModifyExperienceAmount(ExperienceProjectile exp)
+        public static void ModifyExperienceAmount(CollectableExperience exp)
         {
             exp.ExperienceAmount = (int)(exp.ExperienceAmount * PluginConfig.Player.ExperienceMultiplier);
         }

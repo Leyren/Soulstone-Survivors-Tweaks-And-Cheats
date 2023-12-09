@@ -24,10 +24,10 @@ namespace SoulstoneCheats.Patches
             LootModification.ModifyHealthAmount(__instance);
         }
 
-        // Collectible Experience crystals
+        // Collectible Experience crystals// Collectible Experience crystals
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(ExperienceProjectile), nameof(ExperienceProjectile.DoOnReachedTarget))]
-        static void ExperienceProjectile_Prefix(ExperienceProjectile __instance)
+        [HarmonyPatch(typeof(CollectableExperience), nameof(CollectableExperience.DoOnReachedTarget))]
+        static void CollectableExperience_Prefix(CollectableExperience __instance)
         {
             LootModification.ModifyExperienceAmount(__instance);
         }
