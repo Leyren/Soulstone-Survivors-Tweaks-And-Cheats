@@ -31,7 +31,7 @@ NOTE: Configs do not get applied while the game is running, changing the config 
 
 |Config Entry|Default|Description||
 |:----:|:---:|:---:|:---:|
-|`Disable_Enemy_A_I`|`false`| When enabled, enemy AI is completely turned off. No attacks, no movement. **Note**: Boss health bars do not properly disappear after their death if they have no AI. |<img src="Img/DisableEnemyAI.gif" width="400">|
+|`Disable_Enemy_A_I`|`false`| When enabled, enemy AI is completely turned off. No attacks, no movement. **Note**: Boss health bars do not properly disappear after their death if they have no AI. This prevents further bosses from spawning, so only use as a gimmick. |<img src="Img/DisableEnemyAI.gif" width="400">|
 |`Unlock_Zoom`|`false`| Allows you to zoom in / out using your scroll wheel |<img src="Img/UnlockZoom.png" width="400">|
 |`Invulnerable`|`false`| Makes you completely invulnerable ||
 |`Time_Modifier`|`1.0`| Modifies game speed (affects **everything**). E.g. `2.0` doubles it.||
