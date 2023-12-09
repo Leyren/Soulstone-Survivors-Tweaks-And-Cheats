@@ -1,5 +1,5 @@
 # Soulstone Survivors Tweaks
- A mod for the Steam Game [Soulstone Survivors](https://store.steampowered.com/app/2066020/Soulstone_Survivors/), providing access to a bunch of tweaks to make the game infinitely harder, or cheatily easy. 
+ A Cheat / Tweak mod for the Steam Game [Soulstone Survivors](https://store.steampowered.com/app/2066020/Soulstone_Survivors/), providing access to a bunch of tweaks to make the game infinitely harder, or cheatily easy. 
  
  Quick examples of what you can do: 
  - Modify EXP gain, player stats, enemy stats
